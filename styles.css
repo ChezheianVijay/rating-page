@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Orange: hsl(25, 97%, 53%);
+  --White: hsl(0, 0%, 100%);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Dark-Blue: hsl(213, 19%, 18%);
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+
+body {
+  background-color: var(--Very-Dark-Blue);
+  font-family: "overpass", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* /////////////////////////////////// RATING PAGE ////////////////////////////////////// */
+
+main {
+  margin: 50px 50px;
+  padding: 20px;
+  height: 310px;
+  width: 310px;
+  background: linear-gradient(
+    198deg,
+    hsl(213, 19%, 18%),
+    hsl(216deg 14.1% 9.8% / 89%)
+  );
+  border-radius: 30px;
+  color: var(--White);
+}
+
+header {
+  width: 35px;
+  height: 35px;
+  background-color: hsl(0deg 0% 100% / 11%);
+  padding: 2px;
+  border-radius: 50%;
+  border: 1px solid #1a1d23;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 12px;
+  color: var(--Light-Grey);
+  margin-top: 10px;
+  line-height: 18px;
+}
+
+section {
+  margin: 8px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+label {
+  width: 42px;
+  height: 42px;
+  background-color: hsl(0deg 0% 100% / 11%);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.rating {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: var(--Light-Grey);
+  pointer-events: none;
+}
+
+label:hover {
+  background-color: var(--White);
+}
+
+label:hover span {
+  color: var(--Very-Dark-Blue);
+}
+
+input.rating:checked + span {
+  color: var(--Very-Dark-Blue);
+}
+
+input.rating:checked + span::before {
+  background-color: var(--Orange);
+  content: "";
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+button {
+  margin: 1px;
+  padding: 2px;
+  width: 100%;
+  height: 38px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  background-color: var(--Orange);
+  color: var(--Very-Dark-Blue);
+  cursor: pointer;
+}
+
+button:active {
+  background-color: var(--White);
+  color: var(--Very-Dark-Blue);
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+/* /////////////////////////////////// THANK YOU PAGE ////////////////////////////////////// */
+
+.main {
+  margin: 50px 50px;
+  padding: 20px;
+  height: 310px;
+  width: 310px;
+  background: linear-gradient(
+    198deg,
+    hsl(213, 19%, 18%),
+    hsl(216deg 14.1% 9.8% / 89%)
+  );
+  border-radius: 30px;
+  color: var(--White);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thankyu {
+  width: 130px;
+  height: auto;
+}
+
+.box {
+  margin-top: 25px;
+  padding: 6px;
+  width: 60%;
+  text-align: center;
+  height: 25px;
+  background-color: hsl(0deg 0% 100% / 11%);
+  border-radius: 25px;
+}
+
+.value {
+  color: var(--Orange);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.greet {
+  margin-top: 20px;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+.para {
+  font-size: 11px;
+  color: var(--Light-Grey);
+  margin-top: 10px;
+  line-height: 18px;
+  padding: 0px 12px 0px 12px;
+  text-align: center;
+}
+
+.rvalue {
+  color: var(--White);
+  font-weight: 700;
+}
+
+/* /////////////////////////////////// MOBILE RESOLUTION ////////////////////////////////////// */
+
+@media (max-width: 375px) {
+  /* RATING PAGE */
+  main {
+    margin: 20px 20px;
+    padding: 15px;
+    height: 290px;
+    width: 290px;
+    border-radius: 20px;
+  }
+  h1 {
+    margin-top: 25px;
+    font-size: 18px;
+  }
+  p {
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  section {
+    margin: 7px 0px;
+    padding: 8px 0px;
+  }
+  /* THANYOU PAGE */
+  .main {
+    margin: 20px 20px;
+    padding: 15px;
+    height: 290px;
+    width: 290px;
+    border-radius: 20px;
+  }
+}

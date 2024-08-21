@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Interactive rating component</title>
+  </head>
+  <body>
+    <!-- Rating state start -->
+    <main>
+      <header>
+        <img src="./images/icon-star.svg" alt="star" />
+      </header>
+      <article>
+        <h1>How did we do?</h1>
+        <p>
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+      </article>
+      <section>
+        <label for="star1">
+          <input
+            class="rating"
+            type="radio"
+            name="rating"
+            value="1"
+            id="star1"
+          />
+          <span>1</span>
+        </label>
+        <label for="star2">
+          <input
+            class="rating"
+            type="radio"
+            name="rating"
+            value="2"
+            id="star2"
+          />
+          <span>2</span>
+        </label>
+        <label for="star3">
+          <input
+            class="rating"
+            type="radio"
+            name="rating"
+            value="3"
+            id="star3"
+          />
+          <span>3</span>
+        </label>
+        <label for="star4">
+          <input
+            class="rating"
+            type="radio"
+            name="rating"
+            value="4"
+            id="star4"
+          />
+          <span>4</span>
+        </label>
+        <label for="star5">
+          <input
+            class="rating"
+            type="radio"
+            name="rating"
+            value="5"
+            id="star5"
+          />
+          <span>5</span>
+        </label>
+      </section>
+      <button id="submit"><a href="finalpage.html">SUBMIT</a></button>
+    </main>
+    <!-- Rating state end -->
+    <script>
+      document.getElementById("submit").addEventListener("click", function () {
+        const storevalue = document.querySelector(
+          'input[type="radio"]:checked'
+        );
+        if (storevalue) {
+          localStorage.setItem("rating", storevalue.value);
+          window.location.href = "finalpage.html";
+        } else {
+          alert("Please select a rating before submitting");
+        }
+      });
+    </script>
+  </body>
+</html>
